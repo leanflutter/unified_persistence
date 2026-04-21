@@ -1,0 +1,14 @@
+name: unified_persistence
+description: "Unified persistence for all platforms."
+version: 0.0.1
+homepage: https://github.com/leanflutter/unified_persistence
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  web: ^1.0.0
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  test: ^1.20.0
