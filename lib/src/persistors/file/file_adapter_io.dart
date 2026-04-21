@@ -11,11 +11,38 @@ class FilePersistorAdapter implements PersistorAdapter {
   File? _file;
   File get file => _file ??= File(filePath);
 
+  Future<void> _deleteIfExists() async {
+    if (await file.exists()) {
+      await file.delete();
+    }
+  }
+
+  void _deleteIfExistsSync() {
+    if (file.existsSync()) {
+      file.deleteSync();
+    }
+  }
+
+  Future<void> _ensureParentDirectoryExists() async {
+    final Directory parent = file.parent;
+    if (!await parent.exists()) {
+      await parent.create(recursive: true);
+    }
+  }
+
+  void _ensureParentDirectoryExistsSync() {
+    final Directory parent = file.parent;
+    if (!parent.existsSync()) {
+      parent.createSync(recursive: true);
+    }
+  }
+
   @override
   Future<void> persist(Uint8List? value) async {
     if (value == null) {
-      await file.delete();
+      await _deleteIfExists();
     } else {
+      await _ensureParentDirectoryExists();
       await file.writeAsBytes(value);
     }
   }
@@ -23,8 +50,9 @@ class FilePersistorAdapter implements PersistorAdapter {
   @override
   void persistSync(Uint8List? value) {
     if (value == null) {
-      file.deleteSync();
+      _deleteIfExistsSync();
     } else {
+      _ensureParentDirectoryExistsSync();
       file.writeAsBytesSync(value);
     }
   }

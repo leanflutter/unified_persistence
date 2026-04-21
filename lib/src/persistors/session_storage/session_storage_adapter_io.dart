@@ -14,7 +14,9 @@ class SessionStoragePersistorAdapter implements PersistorAdapter {
 
   @override
   void persistSync(Uint8List? value) {
-    throw UnsupportedError(' ');
+    throw UnsupportedError(
+      'SessionStoragePersistor is only supported on web platforms.',
+    );
   }
 
   @override
@@ -24,6 +26,8 @@ class SessionStoragePersistorAdapter implements PersistorAdapter {
 
   @override
   Uint8List? restoreSync() {
-    throw UnsupportedError('');
+    throw UnsupportedError(
+      'SessionStoragePersistor is only supported on web platforms.',
+    );
   }
 }

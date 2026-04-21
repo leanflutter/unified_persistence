@@ -15,7 +15,9 @@ class LocalStoragePersistorAdapter implements PersistorAdapter {
 
   @override
   void persistSync(Uint8List? value) {
-    throw UnsupportedError(' ');
+    throw UnsupportedError(
+      'LocalStoragePersistor is only supported on web platforms.',
+    );
   }
 
   @override
@@ -25,6 +27,8 @@ class LocalStoragePersistorAdapter implements PersistorAdapter {
 
   @override
   Uint8List? restoreSync() {
-    throw UnsupportedError('');
+    throw UnsupportedError(
+      'LocalStoragePersistor is only supported on web platforms.',
+    );
   }
 }

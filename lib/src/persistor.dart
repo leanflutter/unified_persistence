@@ -13,7 +13,7 @@ class Persistor<T> {
     required this.serializer,
   });
 
-  /// The adapter that persists and restores values.  
+  /// The adapter that persists and restores values.
   final PersistorAdapter adapter;
 
   /// The serializer that serializes and deserializes values.
