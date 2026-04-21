@@ -1,3 +1,9 @@
+## 0.0.3
+
+* Add an executable example for pub.dev.
+* Expand API documentation coverage for public types.
+* Fix the installation snippet in the README.
+
 ## 0.0.2
 
 * Add CI and automated pub.dev publishing workflows.

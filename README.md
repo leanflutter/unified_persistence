@@ -12,7 +12,7 @@ Unified persistence primitives for Dart and Flutter applications.
 
 ```yaml
 dependencies:
-  unified_persistence: ^0.0.1
+  unified_persistence: ^0.0.3
 ```
 
 ## Quick Start

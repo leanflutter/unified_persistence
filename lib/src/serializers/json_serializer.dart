@@ -5,12 +5,16 @@ import 'package:unified_persistence/unified_persistence.dart';
 
 /// A serializer that serializes and deserializes values to and from JSON.
 class JsonSerializer<T> implements PersistorSerializer<T> {
+  /// Creates a JSON serializer from object conversion callbacks.
   JsonSerializer({
     required this.toJson,
     required this.fromJson,
   });
 
+  /// Converts an object into a JSON-compatible map.
   final Map<String, dynamic> Function(T object) toJson;
+
+  /// Rebuilds an object from a decoded JSON map.
   final T Function(Map<String, dynamic> json) fromJson;
 
   @override
