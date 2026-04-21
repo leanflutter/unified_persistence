@@ -1,5 +1,3 @@
-library unified_persistence;
-
 export 'src/persistor.dart';
 export 'src/persistor_adapter.dart';
 export 'src/persistor_serializer.dart';
